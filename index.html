@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💖</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SECTION 1: Valentine Question -->
+    <section id="question-screen" class="screen active">
+        <div class="stars-container"></div>
+        <div class="question-content">
+            <h1 class="question-title">Will You Be My Valentine?</h1>
+            <div class="button-container">
+                <button id="yes-btn" class="answer-btn yes-btn">Yes! 💕</button>
+                <button id="no-btn" class="answer-btn no-btn">No</button>
+            </div>
+            <p id="no-response" class="no-response"></p>
+        </div>
+        
+        <!-- Celebration elements (hidden initially) -->
+        <div id="celebration" class="celebration">
+            <div class="fireworks-container"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Main Valentine Experience -->
+    <section id="main-screen" class="screen">
+        <div class="stars-container"></div>
+        
+        <!-- Hero Message -->
+        <div class="hero-section">
+            <h2 class="hero-title">You Said Yes! 💖</h2>
+            <div class="message-box">
+                <!-- ⭐ EDIT YOUR MESSAGE HERE ⭐ -->
+                <p class="love-message">
+                    From the moment we met, you've brought light into my world. 
+                    Every laugh we share, every adventure we take, every quiet moment together — 
+                    it all reminds me how lucky I am to have you. 
+                    You're my favorite person, my best friend, and the one who makes every day brighter. 
+                    Happy Valentine's Day, my love. Here's to us. ❤️
+                </p>
+                <!-- ⭐ END OF EDITABLE MESSAGE ⭐ -->
+            </div>
+        </div>
+
+        <!-- Mini Game Section -->
+        <div class="game-section">
+            <h3 class="section-title">Catch My Hearts 💕</h3>
+            <p class="game-instructions">Tap the falling hearts to catch them!</p>
+            <div id="game-container" class="game-container">
+                <div id="game-canvas"></div>
+                <div class="game-score">Score: <span id="score">0</span></div>
+                <button id="start-game" class="game-btn">Start Game</button>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="timeline-section">
+            <h3 class="section-title">Our Story ✨</h3>
+            <div class="timeline">
+                <!-- ⭐ EDIT TIMELINE ITEMS HERE ⭐ -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>The Beginning</h4>
+                        <p>When our eyes first met and everything changed</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>First Adventure</h4>
+                        <p>Our first date that turned into an unforgettable memory</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Growing Together</h4>
+                        <p>Every moment we've shared has made us stronger</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Forever</h4>
+                        <p>Today, tomorrow, and all the days after 💖</p>
+                    </div>
+                </div>
+                <!-- ⭐ END OF EDITABLE TIMELINE ⭐ -->
+            </div>
+        </div>
+
+        <!-- Why I Love You Section -->
+        <div class="reasons-section">
+            <h3 class="section-title">Why I Love You</h3>
+            <div class="reasons-grid">
+                <!-- ⭐ EDIT REASONS HERE ⭐ -->
+                <div class="reason-card">
+                    <div class="reason-icon">😊</div>
+                    <p>Your laugh is contagious</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">🌟</div>
+                    <p>You light up every room</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">💪</div>
+                    <p>Your strength inspires me</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">🎨</div>
+                    <p>Your creativity amazes me</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">❤️</div>
+                    <p>Your kindness knows no bounds</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">✨</div>
+                    <p>You make ordinary moments magical</p>
+                </div>
+                <!-- ⭐ END OF EDITABLE REASONS ⭐ -->
+            </div>
+        </div>
+
+        <!-- Final Message -->
+        <div class="final-section">
+            <div class="final-message">
+                <h2 class="final-title">Happy Valentine's Day ❤️</h2>
+                <p class="final-text">I love you more than words can say</p>
+                <div class="floating-hearts-final"></div>
+            </div>
+        </div>
+
+        <!-- Easter Egg: Click the title 3 times -->
+        <div id="easter-egg" class="easter-egg">
+            <p>💌 You found the secret message! 💌</p>
+            <p>You're not just my Valentine... you're my everything.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
