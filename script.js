@@ -43,7 +43,7 @@ const noResponses = [
     "Hmm… try again 😏",
     "That's not the right answer 💕",
     "Are you sure about that? 😊",
-    "Think again, beautiful 💖",
+    "Think again 💖",
     "My heart says you meant yes ❤️",
     "Impossible! Try again 😘"
 ];
