@@ -476,11 +476,12 @@ body {
 /* Falling heart in game */
 .falling-heart {
     position: absolute;
-    font-size: 2rem;
+    font-size: 2.5rem;
     cursor: pointer;
     user-select: none;
     animation: fall linear;
     z-index: 100;
+    padding: 10px;
 }
 
 @keyframes fall {

@@ -245,22 +245,20 @@ function spawnHearts() {
     
     // Determine how many hearts to spawn based on score
     let heartsToSpawn = 1;
-    if (score > 10) heartsToSpawn = 2;
-    if (score > 20) heartsToSpawn = 3;
-    if (score > 30) heartsToSpawn = 4;
-    if (score > 40) heartsToSpawn = 3; // Scale back slightly at the end
+    if (score >= 10 && score < 30) heartsToSpawn = 2;
+    if (score >= 30) heartsToSpawn = 3;
     
     // Spawn hearts
     for (let i = 0; i < heartsToSpawn; i++) {
         setTimeout(() => {
             if (gameActive) spawnHeart();
-        }, i * 200); // Slight stagger
+        }, i * 250); // Slight stagger for better spacing
     }
     
-    // Adjust spawn rate as game progresses
-    if (score > 30) spawnRate = 600;
-    else if (score > 20) spawnRate = 700;
-    else if (score > 10) spawnRate = 800;
+    // Adjust spawn rate as game progresses (slower = easier)
+    if (score >= 30) spawnRate = 900;
+    else if (score >= 10) spawnRate = 1000;
+    else spawnRate = 1100;
     
     // Schedule next spawn
     heartInterval = setTimeout(() => spawnHearts(), spawnRate);
@@ -273,11 +271,10 @@ function spawnHeart() {
     heart.style.left = Math.random() * (gameCanvas.offsetWidth - 40) + 'px';
     heart.style.top = '-40px';
     
-    // Faster fall speed as game progresses
-    let fallDuration = 3.5;
-    if (score > 30) fallDuration = 2.2;
-    else if (score > 20) fallDuration = 2.5;
-    else if (score > 10) fallDuration = 2.8;
+    // Slower, more manageable fall speed
+    let fallDuration = 4.0; // Start slower
+    if (score >= 30) fallDuration = 3.0;
+    else if (score >= 10) fallDuration = 3.5;
     
     heart.style.animationDuration = fallDuration + 's';
     
@@ -286,27 +283,45 @@ function spawnHeart() {
     
     let caught = false;
     
-    // Click handler
-    heart.addEventListener('click', () => {
+    // Larger click area - add padding around the heart
+    const clickPadding = 20; // pixels of padding around heart
+    
+    // Click handler with larger hit area
+    const handleClick = (e) => {
         if (!caught && gameActive) {
-            caught = true;
-            score++;
-            scoreDisplay.textContent = score;
-            heart.style.animation = 'none';
-            heart.textContent = '✨';
+            const rect = heart.getBoundingClientRect();
+            const clickX = e.clientX || e.touches?.[0]?.clientX;
+            const clickY = e.clientY || e.touches?.[0]?.clientY;
             
-            // Remove from active hearts
-            const index = activeHearts.indexOf(heart);
-            if (index > -1) activeHearts.splice(index, 1);
+            // Check if click is within padded area
+            const inHitArea = clickX >= rect.left - clickPadding &&
+                            clickX <= rect.right + clickPadding &&
+                            clickY >= rect.top - clickPadding &&
+                            clickY <= rect.bottom + clickPadding;
             
-            setTimeout(() => heart.remove(), 200);
-            
-            // Check for win condition
-            if (score >= 50) {
-                winGame();
+            if (inHitArea) {
+                caught = true;
+                score++;
+                scoreDisplay.textContent = score;
+                heart.style.animation = 'none';
+                heart.textContent = '✨';
+                
+                // Remove from active hearts
+                const index = activeHearts.indexOf(heart);
+                if (index > -1) activeHearts.splice(index, 1);
+                
+                setTimeout(() => heart.remove(), 200);
+                
+                // Check for win condition
+                if (score >= 50) {
+                    winGame();
+                }
             }
         }
-    });
+    };
+    
+    heart.addEventListener('click', handleClick);
+    heart.addEventListener('touchstart', handleClick);
     
     // Check if heart hit the ground (missed)
     setTimeout(() => {

@@ -141,12 +141,11 @@ To change the color scheme, edit CSS variables in `style.css` (line 6):
 - Hearts fall from the top - tap/click to catch them
 - If ANY heart hits the ground, you have to start over
 - Game gets progressively harder:
-  - More hearts spawn simultaneously (up to 4 at once!)
-  - Hearts fall faster as your score increases
-  - At 10 hearts: 2 spawn at once
-  - At 20 hearts: 3 spawn at once
-  - At 30 hearts: 4 spawn at once
-  - At 40 hearts: 3 spawn (slightly easier near the end)
+  - **0-9 hearts:** 1 heart at a time (warm-up)
+  - **10-29 hearts:** 2 hearts at a time (moderate)
+  - **30-50 hearts:** 3 hearts at a time (challenge!)
+- Hearts have a generous click area, so you don't need to be pixel-perfect
+- Larger hearts are easier to tap on mobile
 
 **Grand Prize:**
 - Reach 50 hearts to unlock a special surprise!
