@@ -256,8 +256,8 @@ function spawnHearts() {
     }
     
     // Adjust spawn rate as game progresses (slower = easier)
-    if (score >= 30) spawnRate = 900;
-    else if (score >= 10) spawnRate = 1000;
+    if (score >= 30) spawnRate = 1400;
+    else if (score >= 10) spawnRate = 900;
     else spawnRate = 1100;
     
     // Schedule next spawn
