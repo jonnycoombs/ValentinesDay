@@ -89,6 +89,21 @@ In `index.html`, find the reasons section (around line 95):
 
 Customize the emojis and reasons. You can add or remove cards as needed.
 
+### Prague Prize Code
+
+In `index.html`, find the prize section (around line 67) to customize:
+
+```html
+<div class="prize-code">PRAGUE2026</div>
+```
+
+Change `PRAGUE2026` to any secret code you want her to tell you!
+
+You can also edit:
+- The prize title: `Dinner for Two in Prague`
+- The prize description
+- The prize emojis: `🍽️✨🌃`
+
 ### Colors
 
 To change the color scheme, edit CSS variables in `style.css` (line 6):
@@ -109,21 +124,35 @@ To change the color scheme, edit CSS variables in `style.css` (line 6):
 ### Desktop vs Mobile Behavior
 
 **Desktop (hover-enabled devices):**
-- "No" button runs away from cursor
+- "No" button runs away from cursor on hover
 - Smooth hover effects on all cards
-- Absolute positioning for button escape
+- Button escapes to random positions
 
 **Mobile (touch devices):**
-- "No" button stays in place, shows playful messages when tapped
+- "No" button shows playful messages when tapped
 - Touch-optimized interactions
 - Simplified timeline layout
 
-### Mini Game
+### Mini Game: Catch 50 Hearts! 🎯
 
-- 20-second duration
-- Catch falling hearts by tapping/clicking
-- Score tracking
-- Different endings based on performance
+**Objective:** Catch 50 hearts without missing any!
+
+**Rules:**
+- Hearts fall from the top - tap/click to catch them
+- If ANY heart hits the ground, you have to start over
+- Game gets progressively harder:
+  - More hearts spawn simultaneously (up to 4 at once!)
+  - Hearts fall faster as your score increases
+  - At 10 hearts: 2 spawn at once
+  - At 20 hearts: 3 spawn at once
+  - At 30 hearts: 4 spawn at once
+  - At 40 hearts: 3 spawn (slightly easier near the end)
+
+**Grand Prize:**
+- Reach 50 hearts to unlock a special surprise!
+- A romantic "Dinner for Two in Prague" gift voucher appears
+- Complete with a secret code: **PRAGUE2026**
+- She'll need to tell you this code to prove she won! 🎁
 
 ### Easter Egg
 

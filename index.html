@@ -17,7 +17,7 @@
             <h1 class="question-title">Will You Be My Valentine?</h1>
             <div class="button-container">
                 <button id="yes-btn" class="answer-btn yes-btn">Yes! 💕</button>
-                <button id="no-btn" class="answer-btn no-btn">No</button>
+                <button id="no-btn" class="answer-btn no-btn" style="position: relative;">No</button>
             </div>
             <p id="no-response" class="no-response"></p>
         </div>
@@ -51,11 +51,29 @@
         <!-- Mini Game Section -->
         <div class="game-section">
             <h3 class="section-title">Catch My Hearts 💕</h3>
-            <p class="game-instructions">Tap the falling hearts to catch them!</p>
+            <p class="game-instructions">Catch 50 hearts to win a special prize! Don't let them hit the ground!</p>
             <div id="game-container" class="game-container">
                 <div id="game-canvas"></div>
-                <div class="game-score">Score: <span id="score">0</span></div>
+                <div class="game-score">Score: <span id="score">0</span> / 50</div>
                 <button id="start-game" class="game-btn">Start Game</button>
+            </div>
+            
+            <!-- Prize Reveal (hidden initially) -->
+            <div id="prize-reveal" class="prize-reveal">
+                <div class="prize-card">
+                    <div class="prize-header">🎉 Congratulations! 🎉</div>
+                    <div class="prize-title">You've Won!</div>
+                    <div class="prize-subtitle">Dinner for Two in Prague</div>
+                    <div class="prize-image">🍽️✨🌃</div>
+                    <div class="prize-description">
+                        A romantic evening with me in the beautiful city of Prague
+                    </div>
+                    <div class="prize-code-label">Your Secret Code:</div>
+                    <div class="prize-code">PRAGUE2026</div>
+                    <div class="prize-instruction">
+                        Tell me this code to claim your prize! 💕
+                    </div>
+                </div>
             </div>
         </div>
 
